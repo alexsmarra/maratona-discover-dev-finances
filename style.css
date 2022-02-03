@@ -1,0 +1,186 @@
+/* GLOBAL //////////////////////////////////////////////////*/
+:root {
+    --green: #2F4B3F;
+    --light-green: #339944;
+    --lighter-green: #7BD389;
+    --bodyAndFooterColor: #f0f2f5;
+    --dark-blue: #363f5f;
+    --data-table: #969cb3;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 87.5%;
+}
+
+body {
+    background: var(--bodyAndFooterColor);
+    font-family: 'Poppins', sans-serif;
+}
+
+.sr-only {
+    /* As configurações abaixo são para esconder essa classe da tela, mas sem alterar o valor com relação aos leitores de tela. Não precisa entender tudo, essa dica foi tirada do site  CSS TRICKS */
+    position: absolute;
+    width: 1px;
+    height: 1px; 
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* HEADER //////////////////////////////////////////////////*/
+header {
+    background: var(--green);  /* fallback for old browsers */
+    background: linear-gradient(180deg, var(--green), var(--light-green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(180deg, var(--green), var(--light-green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    text-align: center;
+    /* 1.8 no topo, 0 nas laterais e 10 no bottom */
+    padding: 1.8rem 0 10rem;
+}
+
+
+/*  MAIN ////////////////////////////////////////////////////*/
+.container {
+    width: 70vw;
+    margin: auto;
+}
+
+#balance {
+    margin-bottom: 1rem;
+    margin-top: -7.5rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 0.009rem solid #000;
+    padding: 1.5rem 2rem;
+    border-radius: 0.25rem;
+    margin-bottom: 2rem;
+    color: #363f5f;
+}
+
+.card.income {
+    background: var(--lighter-green);
+}
+
+.card.expense {
+    background: #FA9F9E;
+}
+
+.card.total {
+    background: var(--light-green); /* fallback for old browsers */ 
+    background: linear-gradient(180deg, var(--green-tag-a), var(--green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(180deg,#FFF, rgb(247, 240, 239)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.card h3 {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: normal;
+    font-size: 1.3rem;
+}
+
+.card p {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-top: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--light-green); 
+    font-size: 1.2rem;
+}
+
+a:hover {
+    color: var(--lighter-green);
+}
+
+#transaction {
+    /* para rolagem do elemento (horizontal) caso não caiba na tela, rolando através de um scroll padrão mas sem rolar o restante da tela, mas somente o elemento #transaction */
+    overflow-x: auto;
+}
+
+
+/* MAIN TABLE ////////////////////////////////////////////////////*/
+#data-table {
+    width: 100%;
+    /* espaço entre vertical e horizontal para as bordas da tabela */
+    border-spacing: 0 0.5rem;
+    color: var(--data-table);
+}
+
+table thead th:first-child, 
+table tbody td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem; 
+}
+
+table thead th:last-child,
+table tbody td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+}
+
+table thead th {
+    background: #fff;
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem 2rem;
+}
+
+table tbody td {
+    background: #fff;
+    text-align: left;
+    font-weight: normal;
+    padding: 1rem 2rem;
+}
+
+table tbody tr {
+    opacity: 0.7;
+}
+
+table tbody tr:hover {
+    opacity: 1;
+}
+
+
+/* FOOTER //////////////////////////////////////////////////*/
+footer {
+    background: var(--bodyAndFooterColor);
+    text-align: center;
+    opacity: 0.6;
+    padding: 4rem 0 2rem;
+}
+
+
+/* RESPONSIVE //////////////////////////////////////////////////*/
+@media(min-width: 1040px) {
+    /*  MAIN ////////////////////////////////////////////////////*/
+    #balance {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: -5.5rem;
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+    }
+
+    #transaction a {
+        font-size: 1.5rem;
+    }
+}
