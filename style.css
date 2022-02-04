@@ -3,6 +3,7 @@
     --green: #2F4B3F;
     --light-green: #339944;
     --lighter-green: #7BD389;
+    --red: #FA9F9E;
     --bodyAndFooterColor: #f0f2f5;
     --dark-blue: #363f5f;
     --data-table: #969cb3;
@@ -39,7 +40,7 @@ body {
 /* HEADER //////////////////////////////////////////////////*/
 header {
     background: var(--green);  /* fallback for old browsers */
-    background: linear-gradient(180deg, var(--green), var(--light-green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(180deg, var(--green), var(--light-green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: linear-gradient(180deg, var(--green), var(--light-green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     text-align: center;
     /* 1.8 no topo, 0 nas laterais e 10 no bottom */
@@ -49,19 +50,25 @@ header {
 
 /*  MAIN ////////////////////////////////////////////////////*/
 .container {
-    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
     margin: auto;
 }
 
 #balance {
+    display: flex;
+    flex-direction: column;
+    width: 70vw;
+    margin: auto;
     margin-bottom: 1rem;
-    margin-top: -7.5rem;
+    margin-top: -8.5rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
-    border: 0.009rem solid #000;
+    /* border: 0.009rem solid #000; */
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
     margin-bottom: 2rem;
@@ -70,16 +77,20 @@ header {
 
 .card.income {
     background: var(--lighter-green);
+    background: -webkit-linear-gradient(180deg, rgb(247, 240, 239), var(--lighter-green));
+    background: linear-gradient(180deg, rgb(247, 240, 239), var(--lighter-green));
 }
 
 .card.expense {
-    background: #FA9F9E;
+    background: var(--red);
+    background: -webkit-linear-gradient(180deg, rgb(247, 240, 239), var(--red));
+    background: linear-gradient(180deg, rgb(247, 240, 239), var(--red));
+
 }
 
+
 .card.total {
-    background: var(--light-green); /* fallback for old browsers */ 
-    background: linear-gradient(180deg, var(--green-tag-a), var(--green)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background: linear-gradient(180deg,#FFF, rgb(247, 240, 239)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #fff; 
 }
 
 .card h3 {
@@ -88,6 +99,7 @@ header {
     justify-content: space-between;
     align-items: center;
     font-weight: normal;
+    font-style: italic;
     font-size: 1.3rem;
 }
 
@@ -95,7 +107,8 @@ header {
     display: flex;
     flex: 1;
     justify-content: center;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    font-weight: 400;
     line-height: 3rem;
     margin-top: 1rem;
 }
@@ -112,7 +125,9 @@ a:hover {
 
 #transaction {
     /* para rolagem do elemento (horizontal) caso não caiba na tela, rolando através de um scroll padrão mas sem rolar o restante da tela, mas somente o elemento #transaction */
+    display: block;
     overflow-x: auto;
+    margin-top: 0.7rem;
 }
 
 
@@ -138,7 +153,7 @@ table thead th {
     background: #fff;
     text-align: left;
     font-weight: normal;
-    padding: 1rem 2rem;
+    padding: 0.5rem 2rem;
 }
 
 table tbody td {
@@ -157,9 +172,14 @@ table tbody tr:hover {
 }
 
 
+/* MODAL //////////////////////////////////////////////////*/
+
+
+
 /* FOOTER //////////////////////////////////////////////////*/
 footer {
-    background: var(--bodyAndFooterColor);
+    color: var(--dark-blue);
+    font-size: 1rem;
     text-align: center;
     opacity: 0.6;
     padding: 4rem 0 2rem;
