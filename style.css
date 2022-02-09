@@ -2,9 +2,12 @@
 :root {
     --green: #2F4B3F;
     --light-green: #339944;
+    --light-green_hover: #3aaf4e;
     --lighter-green: #7BD389;
     --red: #FA9F9E;
+    --red: #e92929;
     --bodyAndFooterColor: #f0f2f5;
+    --modal-color: #F2F0f5;
     --dark-blue: #363f5f;
     --data-table: #969cb3;
 }
@@ -173,7 +176,89 @@ table tbody tr:hover {
 
 
 /* MODAL //////////////////////////////////////////////////*/
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999;
+}
 
+.modal-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.modal {
+    background-color: var(--modal-color);
+    padding: 2.4rem;
+}
+
+#form {
+    width: 90vw;
+}
+
+#form h2 {
+    font-weight: 400;
+    margin-top: 0;
+}
+
+input {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+.input-group {
+    margin-top: 0.8rem;
+}
+
+.input-group.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-group.actions.button,
+.input-group.actions button {
+    width: 48%;
+}
+
+.input-group.actions .button {
+    border: 2px solid var(--red);
+    color: var(--red);
+    width: 45%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+}
+
+.input-group.actions .button:hover {
+    opacity: 1;
+}
+
+.input-group.actions button {
+    width: 45%;
+    height: 50px;
+    font-size: 1.1rem;
+    background: var(--light-green);
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+}
+
+.input-group.actions button:hover {
+    background-color: var(--light-green_hover);
+}
 
 
 /* FOOTER //////////////////////////////////////////////////*/
@@ -190,10 +275,15 @@ footer {
 @media(min-width: 1040px) {
     /*  MAIN ////////////////////////////////////////////////////*/
     #balance {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
         margin-top: -5.5rem;
+    }
+
+    .card {
+        margin: 1rem;
+        min-width: 30%;
     }
 
     .card h3 {
@@ -202,5 +292,25 @@ footer {
 
     #transaction a {
         font-size: 1.5rem;
+    }
+}
+
+
+ /*  FORM ////////////////////////////////////////////////////*/
+@media(min-width: 600px) {
+    #form {
+        width: 60vw;
+    }
+}
+
+@media(min-width: 1000px) {
+    #form {
+        width: 50vw;
+    }
+}
+
+@media(min-width: 1235px) {
+    #form {
+        width: 40vw;
     }
 }
