@@ -4,7 +4,7 @@
     --light-green: #339944;
     --light-green_hover: #3aaf4e;
     --lighter-green: #7BD389;
-    --red: #FA9F9E;
+    --red-light: #FA9F9E;
     --red: #e92929;
     --bodyAndFooterColor: #f0f2f5;
     --modal-color: #F2F0f5;
@@ -59,13 +59,13 @@ header {
     margin: auto;
 }
 
-#balance {
+#balance {  
     display: flex;
     flex-direction: column;
-    width: 70vw;
+    width: 50vw;
     margin: auto;
     margin-bottom: 1rem;
-    margin-top: -8.5rem;
+    margin-top: -7.5rem;
 }
 
 .card {
@@ -86,8 +86,8 @@ header {
 
 .card.expense {
     background: var(--red);
-    background: -webkit-linear-gradient(180deg, rgb(247, 240, 239), var(--red));
-    background: linear-gradient(180deg, rgb(247, 240, 239), var(--red));
+    background: -webkit-linear-gradient(180deg, rgb(247, 240, 239), var(--red-light));
+    background: linear-gradient(180deg, rgb(247, 240, 239), var(--red-light));
 
 }
 
@@ -140,6 +140,7 @@ a:hover {
     /* espaço entre vertical e horizontal para as bordas da tabela */
     border-spacing: 0 0.5rem;
     color: var(--data-table);
+    margin-top: 1rem;
 }
 
 table thead th:first-child, 
@@ -172,6 +173,14 @@ table tbody tr {
 
 table tbody tr:hover {
     opacity: 1;
+}
+
+.incomeTable {
+    color: var(--light-green);
+}
+
+.expenseTable {
+    color: var(--red);
 }
 
 
@@ -272,13 +281,14 @@ footer {
 
 
 /* RESPONSIVE //////////////////////////////////////////////////*/
-@media(min-width: 1040px) {
+@media(min-width: 1200px) {
     /*  MAIN ////////////////////////////////////////////////////*/
     #balance {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
         margin-top: -5.5rem;
+        width: 70vw;
     }
 
     .card {
@@ -290,8 +300,20 @@ footer {
         font-size: 1.5rem;
     }
 
-    #transaction a {
-        font-size: 1.5rem;
+    a {
+        font-size: 1.25rem;
+        margin-top: 2rem;
+    }
+
+    #transaction {
+        width: 60vw;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    #data-table {
+        margin-top: 0.5rem;
     }
 }
 
