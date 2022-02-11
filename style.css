@@ -116,7 +116,7 @@ header {
     margin-top: 1rem;
 }
 
-a {
+#transaction a {
     text-decoration: none;
     color: var(--light-green); 
     font-size: 1.2rem;
@@ -233,6 +233,7 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 2rem;
 }
 
 .input-group.actions.button,
@@ -249,6 +250,7 @@ input {
     align-items: center;
     justify-content: center;
     opacity: 0.6;
+    text-decoration: none;
 }
 
 .input-group.actions .button:hover {
@@ -263,6 +265,7 @@ input {
     color: #fff;
     border: none;
     border-radius: 0.25rem;
+    padding: 0px;
 }
 
 .input-group.actions button:hover {
@@ -300,7 +303,7 @@ footer {
         font-size: 1.5rem;
     }
 
-    a {
+    #transaction a {
         font-size: 1.25rem;
         margin-top: 2rem;
     }
