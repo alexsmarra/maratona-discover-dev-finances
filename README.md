@@ -6,7 +6,7 @@ HTML CSS JavaScript
 
 Fiz algumas alterações como forma de treinamento.
 
-
+-------------------------------------------------------------------------------------------------------------------------
 
 💻 The project DEV.FINANCE$ is a financial control application, where you can register and delete transactions and see the incoming and outgoing balance 💰
 
