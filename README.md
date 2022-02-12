@@ -10,3 +10,4 @@ This project was developed with the following technologies:
 
 HTML CSS JavaScript
 
+<img width="1330" alt="Captura de Tela 2022-02-12 às 11 42 23" src="https://user-images.githubusercontent.com/61237811/153716194-893eda95-099b-4875-b671-d849c1624880.png">
