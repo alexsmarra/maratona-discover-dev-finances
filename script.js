@@ -133,6 +133,14 @@ const Utils = {
     formatDate(value) {
         const splittedDate = value.split("-")
         return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
+    },
+
+    totalCardColor() {
+        if (Transaction.total() > 0) {
+            document.querySelector('.card.total').style.backgroundColor = "#7BD389"
+        } else {
+            document.querySelector('.card.total').style.backgroundColor = "#FA9F9E" 
+        }
     }
 }
 
@@ -200,7 +208,6 @@ const Form = {
 const App = {
     
     init() {
-        DOM.clearTransactions()
 
         Transaction.all.forEach((transaction, index) => {
             DOM.addTransaction(transaction, index)
@@ -208,14 +215,18 @@ const App = {
         
         DOM.updateBalance()
 
+        Utils.totalCardColor()
+
         Storage.set(Transaction.all)
     },
     
     reload() {
+        DOM.clearTransactions()
         this.init()
     }
 }
 
+App.init()
 
 
 
