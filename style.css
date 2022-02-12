@@ -180,6 +180,10 @@ table tbody tr:hover {
     opacity: 1;
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 .incomeTable {
     color: var(--light-green);
 }

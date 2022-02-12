@@ -88,7 +88,7 @@ const DOM = {
             <td class="${CSSclass}">${amount}</td>
             <td>${transaction.date}</td>
             <td>
-               <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="excluir item">
+               <img class="pointer" onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="excluir item">
             </td>
         `
 
@@ -102,6 +102,14 @@ const DOM = {
             .innerHTML = Utils.formatCurrency(Transaction.expenses())
         document.getElementById('totalDisplay')
             .innerHTML = Utils.formatCurrency(Transaction.total())
+    },
+
+    totalCardColor() {
+        if (Transaction.total() > 0) {
+            document.querySelector('.card.total').style.backgroundColor = "#7BD389"
+        } else {
+            document.querySelector('.card.total').style.backgroundColor = "#FA9F9E" 
+        }
     },
 
     clearTransactions() {
@@ -133,14 +141,6 @@ const Utils = {
     formatDate(value) {
         const splittedDate = value.split("-")
         return `${splittedDate[2]}/${splittedDate[1]}/${splittedDate[0]}`
-    },
-
-    totalCardColor() {
-        if (Transaction.total() > 0) {
-            document.querySelector('.card.total').style.backgroundColor = "#7BD389"
-        } else {
-            document.querySelector('.card.total').style.backgroundColor = "#FA9F9E" 
-        }
     }
 }
 
@@ -215,7 +215,7 @@ const App = {
         
         DOM.updateBalance()
 
-        Utils.totalCardColor()
+        DOM.totalCardColor()
 
         Storage.set(Transaction.all)
     },
